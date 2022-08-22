@@ -83,7 +83,7 @@ router.post("/add", uploadImage, async (req, res) => {
       await user.save();
 
       success = true;
-      res.status(200).json({ success, token: jwtData });
+      res.status(201).json({ success, token: jwtData });
     }
   } catch (err) {
     res.status(500).json({ success, error: err.message });
@@ -111,7 +111,6 @@ router.post(
     try {
       // Checking if the user exists in database
       let foundUser = await Card.findOne({ email: req.body.email }).select(['_id', 'email', 'password'])
-      console.log(foundUser)
 
       if (!foundUser) {
         return res.status(404).json({success, error: "Credentials do not match" });
