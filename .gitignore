@@ -20,14 +20,17 @@
 # Private Node Modules
 node_modules/
 creds.js
+uploads/
  
 # Private Files
-
+*.png
 *.csv
 *.csv.gz
 *.tsv
 *.tsv.gz
 *.xlsx
+*jpg
+*jpeg
  
  
 # Mac/OSX
